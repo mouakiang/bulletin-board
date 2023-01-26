@@ -19,9 +19,66 @@ Additional considerations:
 
 -   Ask: which of your HTML elements need to be hard coded, and which need to be dynamically generated?
 -   Consider your data model.
-    -   What kinds of objects (i.e., Dogs, Friends, Todos, etc) will you need?
+    -   What kinds of objects (i.e., Dogs, Friends, To dos, etc) will you need?
     -   What are the key/value pairs?
     -   What arrays might you need?
     -   What needs to live in a persistence layer?
 -   Is there some state we need to initialize?
 -   Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be reused?)
+
+# HOME PAGE
+
+# HTML
+
+-Login Button
+-Sign Up Button
+-Empty div to inject bulletin posts to
+
+# DATA MODEL
+
+-Columns on the table and properties on the objects
+-Posts need
+-topic: string
+-message: string
+-contact: string
+
+# EVENTS
+
+-Load event listener
+-If user is logged in change the login button to a logout button
+-User clicks login button -> redirect to the auth/login page
+-User clicks sign up button -> redirect to the auth/sign up page
+-User clicks logout button -> redirect to the auth/sign in page
+
+# AUTH PAGE
+
+# HTML
+
+-Sign in Form
+-Sign up Form
+
+# EVENTS
+
+-On Load, check if the user is logged in, if so redirect them to the home page
+-Submit the sign in form
+-get the email and password from the form
+-call the sign in auth function with the email and password
+-redirect the user to the home page
+-Submit the sign up form
+-get the email and password from the form
+-call the sign up in auth function with the email and password
+-redirect the user to the home page
+
+# CREATE PAGE
+
+# HTML
+
+-Bulletin form
+
+# EVENTS
+
+-On Load, check if the user is logged in, if so redirect them to the home page
+-On the submit form
+-get data from the form
+-use the form data to create a post in supabase
+-redirect the user to the home page
