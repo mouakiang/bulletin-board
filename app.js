@@ -1,5 +1,5 @@
 /* Imports */
-import { getUser, signOut, getPosts, redirectUser } from './fetch-utils.js';
+import { getUser, signOut, getPosts, redirectUser, signInUser } from './fetch-utils.js';
 /* Get DOM Elements */
 const postsContainerEl = document.querySelector('.posts-container');
 const loginButtonEl = document.querySelector('#login-button');

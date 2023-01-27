@@ -15,13 +15,12 @@ export async function signup(email, password) {
     return response.data;
 }
 
-export async function signIn(email, password) {
-    const signIn = await client.auth.signInWithPassword({
+export async function signInUser(email, password) {
+    const response = await client.auth.signIn({
         email: email,
         password: password,
     });
-
-    return signIn.data;
+    return response.data;
 }
 
 export async function newPosts(topic, message, contact) {
