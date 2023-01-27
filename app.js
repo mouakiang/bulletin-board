@@ -10,7 +10,7 @@ let posts = [];
 loginButtonEl.addEventListener('click', () => {
     if (getUser()) signOut();
 
-    window.location.href = './auth';
+    redirectUser();
 });
 
 createButtonEl.addEventListener('click', () => {

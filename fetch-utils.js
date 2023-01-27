@@ -20,7 +20,7 @@ export async function signInUser(email, password) {
         email: email,
         password: password,
     });
-    return response.data;
+    return response.user;
 }
 
 export async function newPosts(topic, message, contact) {
