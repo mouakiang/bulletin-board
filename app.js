@@ -1,5 +1,5 @@
 /* Imports */
-import { getUser, signOut, getPosts } from './fetch-utils.js';
+import { getUser, signOut, getPosts, redirectUser } from './fetch-utils.js';
 /* Get DOM Elements */
 const postsContainerEl = document.querySelector('.posts-container');
 const loginButtonEl = document.querySelector('#login-button');
@@ -15,6 +15,8 @@ loginButtonEl.addEventListener('click', () => {
 
 createButtonEl.addEventListener('click', () => {
     window.location.href = './create';
+
+    redirectUser();
 });
 
 window.addEventListener('load', async () => {

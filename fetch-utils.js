@@ -43,7 +43,7 @@ export async function getUser() {
 export async function checkAuth() {
     const user = await getUser();
 
-    if (!user) location.replace('/auth');
+    if (!user) location.replace('../');
 }
 
 export async function signOut() {
@@ -56,4 +56,10 @@ export async function getPosts() {
     const { data } = await client.from('posts').select('*');
 
     return data;
+}
+
+export async function redirectUser() {
+    const user = await getUser();
+
+    if (!user) window.location.href = './auth';
 }
