@@ -51,3 +51,9 @@ export async function signOut() {
 
     return response.error;
 }
+
+export async function getPosts() {
+    const { data } = await client.from('posts').select('*');
+
+    return data;
+}

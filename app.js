@@ -1,9 +1,9 @@
 /* Imports */
-import { getUser, signOut, newPosts } from './fetch-utils.js';
+import { getUser, signOut, getPosts } from './fetch-utils.js';
 /* Get DOM Elements */
 const postsContainerEl = document.querySelector('.posts-container');
 const loginButtonEl = document.querySelector('#login-button');
-const signUpButtonEl = document.querySelector('#signup-button');
+const createButtonEl = document.querySelector('#create-button');
 /* State */
 let posts = [];
 /* Events */
@@ -13,8 +13,8 @@ loginButtonEl.addEventListener('click', () => {
     window.location.href = './auth';
 });
 
-signUpButtonEl.addEventListener('click', () => {
-    window.location.href = './auth';
+createButtonEl.addEventListener('click', () => {
+    window.location.href = './create';
 });
 
 window.addEventListener('load', async () => {
@@ -24,7 +24,7 @@ window.addEventListener('load', async () => {
         loginButtonEl.textContent = 'log out';
     }
 
-    const newPosts = await newPosts();
+    const newPosts = await getPosts();
 
     posts = newPosts;
     displayPosts();
