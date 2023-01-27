@@ -5,7 +5,7 @@ const SUPABASE_KEY =
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export async function signup(email, password) {
-    const response = await client.auth.signup({
+    const response = await client.auth.signUp({
         email: email,
         password: password,
     });
