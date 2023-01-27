@@ -1,11 +1,11 @@
 /* Imports */
-
+import { getUser, signOut } from './fetch-utils.js';
 /* Get DOM Elements */
-const postsContainerEl = document.querySelector('.posts-container');
-const loginButtonEl = document.querySelector('.login-button');
-const signUpButtonEl = document.querySelector('.signup-button');
+// const postsContainerEl = document.querySelector('.posts-container');
+const loginButtonEl = document.querySelector('#login-button');
+const signUpButtonEl = document.querySelector('#signup-button');
 /* State */
-let posts = [];
+// let posts = [];
 /* Events */
 loginButtonEl.addEventListener('click', () => {
     if (getUser()) signOut();
@@ -14,41 +14,40 @@ loginButtonEl.addEventListener('click', () => {
 });
 
 signUpButtonEl.addEventListener('click', () => {
-    window.location.href = './create';
+    window.location.href = './auth';
 });
 
-window.addEventListener('load', async () => {
-    const user = await getUser();
+// window.addEventListener('load', async () => {
+//     const user = await getUser();
 
-    if (user) {
-        loginButtonEl.textContent = 'log out';
-    }
+//     if (user) {
+//         loginButtonEl.textContent = 'log out';
+//     }
 
-    const newPosts = await getPosts();
+//     const newPosts = await getPosts();
 
-    posts = newPosts;
-    displayPosts();
-});
+//     posts = newPosts;
+//     displayPosts();
+// });
 /* Display Functions */
-function displayPosts() {
-    postsContainerEl.textContent = '';
+// function displayPosts() {
+//     postsContainerEl.textContent = '';
 
-    for (let post of posts) {
-        const postsEl = document.createElement('div');
-        const topicEl = document.createElement('h3');
-        const messageEl = document.createElement('p');
-        const contactEl = document.createElement('p');
+//     for (let post of posts) {
+//         const postsEl = document.createElement('div');
+//         const topicEl = document.createElement('h3');
+//         const messageEl = document.createElement('p');
+//         const contactEl = document.createElement('p');
 
-        topicEl.textContent = post.topic;
-        messageEl.textContent = post.message;
-        contactEl.textContent = post.contact;
+//         topicEl.textContent = post.topic;
+//         messageEl.textContent = post.message;
+//         contactEl.textContent = post.contact;
 
-        postsEl.classList.add('post');
+//         postsEl.classList.add('post');
 
-        postsEl.append(topicEl, messageEl, contactEl);
+//         postsEl.append(topicEl, messageEl, contactEl);
 
-        postsContainerEl.append(postsEl);
-    }
-}
-displayPosts();
+//         postsContainerEl.append(postsEl);
+//     }
+// }
 // (don't forget to call any display functions you want to run on page load!)
