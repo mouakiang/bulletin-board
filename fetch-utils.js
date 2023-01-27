@@ -24,17 +24,17 @@ export async function signIn(email, password) {
     return signIn.data;
 }
 
-// export async function newPosts(topic, message, contact) {
-//     const { data, error } = await client.from('posts').insert([
-//         {
-//             topic: topic,
-//             message: message,
-//             contact: contact,
-//         },
-//     ]);
+export async function newPosts(topic, message, contact) {
+    const { data, error } = await client.from('posts').insert([
+        {
+            topic: topic,
+            message: message,
+            contact: contact,
+        },
+    ]);
 
-//     return data;
-// }
+    return data;
+}
 
 export async function getUser() {
     return client.auth.session() && client.auth.session().user;
